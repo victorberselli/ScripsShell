@@ -1,0 +1,23 @@
+#!/bin/bash
+# ls -la --color=auto
+# compara o usuario, testa a existencia do diretorio e arquivo e so assim realiza a criacao dos mesmo.
+echo -n "Entre com a quantidade de diretorios que será criado: "
+read DIR
+
+if [ ! -d "/tmp/copia" ]; then
+	mkdir /tmp/copia
+fi
+
+for VAR in $(seq 1 $DIR); do 
+  if [ -d "/tmp/copia/dir$VAR" ]; then
+    echo "Diretorio /tmp/copia/dir$VAR existe, ignorando"
+    if [ "$USER" = "ti" ]; then 
+      echo "  Rodando como TI"
+    fi
+  else
+    echo "Nao existe: numero dir$VAR"	  
+    mkdir /tmp/copia/dir$VAR
+  fi
+done
+
+exit 0

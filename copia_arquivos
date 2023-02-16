@@ -1,0 +1,9 @@
+#!/bin/bash
+ls -la --color=auto
+if [ -d "copia" ]; then
+	echo "O diretorio copia existe ignorando comando mkdir" 
+else
+	mkdir copia
+fi
+cp /bin/ls copia
+

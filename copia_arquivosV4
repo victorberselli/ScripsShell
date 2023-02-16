@@ -1,0 +1,19 @@
+#!/bin/bash
+# ls -la --color=auto
+# compara o usuario, testa a existencia do diretorio e arquivo e so assim realiza a criacao dos mesmo.
+echo -n "Entre com o nome de usuario para verificacao: "
+read USUARIO
+
+if [ "$USER" != "$USUARIO" ]; then
+	echo "O $USUARIO, nao eh o criador do arquivo"
+	exit 1
+fi
+
+if [ ! -d "/tmp/copia" ]; then
+	mkdir /tmp/copia
+fi
+if [ ! -f "/tmp/copia/ls" ]; then
+	cp /bin/ls /tmp/copia
+fi
+
+exit 0

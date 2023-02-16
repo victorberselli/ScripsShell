@@ -1,0 +1,7 @@
+#!/bin/bash
+#ls -la --color=auto
+if [ ! -d "/tmp/copia" ]; then
+	mkdir /tmp/copia
+fi
+cp /bin/ls /tmp/copia
+

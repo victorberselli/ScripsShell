@@ -1,0 +1,15 @@
+#!/bin/bash
+# ls -la --color=auto
+if [ "$(whoami)" != "root" ]; then
+	echo "nao esta rodando como root"
+	exit 1
+fi
+
+if [ ! -d "/tmp/copia" ]; then
+	mkdir /tmp/copia
+fi
+if [ ! -f "/tmp/copia/ls" ]; then
+	cp /bin/ls /tmp/copia
+fi
+
+exit 0
