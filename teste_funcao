@@ -1,4 +1,0 @@
-#!/bin/bash
-# Este e um programa de este de função shell
-
-ls $1
